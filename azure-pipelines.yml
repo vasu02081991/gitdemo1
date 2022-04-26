@@ -38,9 +38,8 @@ stages:
         tags: |
           $(tag)
       - task: CmdLine@2
-           displayName: Scan
+      displayName : scan
       inputs:
       script:
-        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy --exit-code 0 --severity MEDIUM,HIGH --ignore-unfixed $(acrdefenderdemo1)/$(mcr.microsoft.com/azureiotedge-hub):$(tag 1.1)
-         
-        docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy --exit-code 1 --severity CRITICAL --ignore-unfixed $(acrdefenderdemo1)/$(mcr.microsoft.com/azureiotedge-hub):$(tag 1.1)
+               docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy --exit-code 0 --severity MEDIUM,HIGH --ignore-unfixed $(acrdefenderdemo1)/$(mcr.microsoft.com/azureiotedge-hub):$(tag 1.1)
+              docker run --rm -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy --exit-code 1 --severity CRITICAL --ignore-unfixed $(acrdefenderdemo1)/$(mcr.microsoft.com/azureiotedge-hub):$(tag 1.1)
