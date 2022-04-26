@@ -37,7 +37,7 @@ stages:
         containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
- - task: CmdLine@2
+  task: CmdLine@2
       displayName: Scan
       inputs:
         script: |
