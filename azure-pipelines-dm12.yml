@@ -1,6 +1,6 @@
 trigger:
   paths:
-    include: ["12-container-trivy-sacnning"]
+##    include: ["12-container-trivy-sacnning"]
 
 resources:
   - repo: self
@@ -78,7 +78,7 @@ stages:
 
           - task: Docker@2
             inputs:
-              containerRegistry: "DockerHub-WinOpsDBA-nikosts"
+              containerRegistry: "Acrdefenderdemo"
               command: "login"
 
           # - task: Docker@2
